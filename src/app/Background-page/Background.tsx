@@ -6,7 +6,7 @@ export default function Background() {
       <Image
         width={1920}
         height={0}
-        src="/content/space.gif?v=2"
+        src="/content/space.gif"
         className="absolute inset-0 w-full h-full object-cover"
         alt="Background"
       />

@@ -16,20 +16,20 @@ export default function Page() {
       />
 
       {/* Text content */}
-      <a className="text-1xl font-bold text-center">Hi, My Name is</a>
-      <h1 className="text-2xl sm:text-6xl p-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+      <a className="text-lg sm:text-1xl font-bold text-center">Hi, My Name is</a>
+      <h1 className="text-4xl sm:text-6xl p-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
         Muhammad Einggi Gusti P
       </h1>
-      <p className="text-l sm:text-2xl text-center">
+      <p className="text-lg sm:text-2xl mt-10 text-center font-bold">
         This website is a collection of my projects and experiences.
       </p>
-      <p className="text-1xl sm:text-2xl text-center">
+      <p className="text-lg sm:text-2xl text-center font-bold">
         Feel free to explore and learn more about me.
       </p>
       <a
         href="/content/cv-einggi.pdf"
         download
-        className="inline-flex mt-20 lg:mt-5 items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
+        className="inline-flex mt-5 items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

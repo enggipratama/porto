@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playwrite+AU+SA:wght@100..400&display=swap');
 @import "tailwindcss";
+
+/* h1 {
+  font-family: var(--font-caveat), cursive;
+} */
+
 
 :root {
   --background: #ffffff;
@@ -22,17 +28,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-caveat), cursive;
 }
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE 10+ */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-/* tambahkan ke globals.css atau tailwind.config */
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

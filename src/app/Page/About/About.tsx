@@ -12,12 +12,12 @@ export default function About() {
         height={30}
         src="/content/shooting-star.gif?v=2"
         alt="About Icon"
-        className="w-24 h-24 mx-auto mt-10"
+        className="w-24 h-24 mx-auto"
       />
 
       {/* Text content */}
-      <a className="text-2xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
-        About Me
+      <a className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+        About Me_
       </a>
     </section>
   );
