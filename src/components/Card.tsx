@@ -101,7 +101,6 @@ export default function MyCardSection() {
         ))}
       </div>
 
-      {/* Tombol Navigasi di Bawah */}
       {cards.length > 1 && (
         <div className="flex justify-center gap-4 mt-6">
           <button

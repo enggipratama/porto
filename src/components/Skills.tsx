@@ -17,45 +17,60 @@ const skills = [
 
 export default function Skill() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const speed = useRef(1);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    let scrollAmount = 0;
-    const speed = 0.5;
+    const handleManualScroll = () => {
+      const { scrollLeft, scrollWidth, offsetWidth } = container;
+
+      if (scrollLeft >= scrollWidth - offsetWidth) {
+        container.scrollLeft = 0;
+      } else if (scrollLeft <= 0) {
+        container.scrollLeft = scrollWidth - offsetWidth;
+      }
+    };
+
+    container.addEventListener("scroll", handleManualScroll);
 
     const scroll = () => {
       if (!container) return;
-      container.scrollLeft += speed;
-      scrollAmount += speed;
 
-      // Reset scroll saat akhir
-      if (scrollAmount >= container.scrollWidth / 2) {
+      container.scrollLeft += speed.current;
+
+      if (
+        container.scrollLeft >=
+        container.scrollWidth - container.offsetWidth
+      ) {
         container.scrollLeft = 0;
-        scrollAmount = 0;
       }
 
       requestAnimationFrame(scroll);
     };
 
-    scroll();
+    requestAnimationFrame(scroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleManualScroll);
+    };
   }, []);
 
   return (
-    <section className="py-10 px-8 sm:px-30">
+    <section className="py-10 px-10 sm:px-30">
       <h2 className="text-center text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         My Skills
       </h2>
 
       <div
         ref={containerRef}
-        className="overflow-hidden whitespace-nowrap flex gap-2 px-4"
+        className="overflow-x-auto whitespace-nowrap flex gap-1 px-4 no-scrollbar"
       >
         {[...skills, ...skills].map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center min-w-[120px]"
+            className="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[120px]"
           >
             <Image
               src={skill.src}
