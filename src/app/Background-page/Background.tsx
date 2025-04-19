@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 export default function Background() {
   return (
@@ -11,10 +12,8 @@ export default function Background() {
         alt="Background"
       />
 
-      {/* Gradient Biru Kiri Atas */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-500 to-transparent opacity-40 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Gradient Kuning Kanan Bawah */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-yellow-400 to-transparent opacity-20 rounded-full blur-2xl pointer-events-none" />
     </div>
   );

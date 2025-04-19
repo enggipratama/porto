@@ -9,35 +9,35 @@ export default function MyCardSection() {
 
   const cards = [
     {
-      title: "Davibar",
-      content: "Warehouse Website",
+      title: "Davibar House",
+      content: "Warehouse Inventory Website",
       footer: "https://github.com/enggipratama/DAVIBARTEST",
       image: "/content/davibar.png",
     },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
+    {
+      title: "Davibar",
+      content: "Warehouse Website",
+      footer: "https://github.com/davibar",
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar",
+      content: "Warehouse Website",
+      footer: "https://github.com/davibar",
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar",
+      content: "Warehouse Website",
+      footer: "https://github.com/davibar",
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar",
+      content: "Warehouse Website",
+      footer: "https://github.com/davibar",
+      image: "/content/davibar.png",
+    },
   ];
 
   const scroll = (direction: "left" | "right") => {
@@ -55,7 +55,6 @@ export default function MyCardSection() {
 
   return (
     <div className="relative w-full max-w-[70vw] mx-auto">
-      {/* Kontainer Card */}
       <div
         ref={scrollRef}
         className={`flex gap-0 snap-x snap-mandatory ${
@@ -65,11 +64,9 @@ export default function MyCardSection() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="snap-center shrink-0 min-w-[100%] sm:min-w-[50%] lg:min-w-[25%] flex flex-col items-center justify-center px-4"
+            className="snap-center shrink-0 min-w-[100%] sm:min-w-[50%] lg:min-w-[25%] flex flex-col items-center justify-center px-4 mt-3"
           >
-            <div className="bg-gradient-to-br from-indigo-900 via-purple-900 to-black backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 relative overflow-hidden group transition transform hover:scale-105">
-              <div className="absolute inset-0 bg-[url('/content/star.gif')] bg-cover opacity-10 pointer-events-none" />
-
+            <div className="bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 relative overflow-hidden group transition transform hover:scale-105">
               <div className="w-16 h-16 mx-auto relative overflow-hidden rounded-md">
                 <Image
                   src={card.image}
@@ -79,19 +76,18 @@ export default function MyCardSection() {
                 />
               </div>
 
-              <h2 className="text-l font-bold text-center text-white mt-2">
+              <a className="text-xl font-bold text-center text-white mt-2 line-clamp-2 w-32">
                 {card.title}
-              </h2>
-              <p className="text-white text-sm text-center line-clamp-2">
+              </a>
+              <p className="text-white text-xs text-center line-clamp-2 w-32 h-8 mt-3">
                 {card.content}
               </p>
 
-              {/* GitHub Logo */}
               <a
                 href={card.footer}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center mt-4 transition-transform duration-200 hover:scale-110"
+                className="flex items-center justify-center mt-4 transition-transform duration-200 hover:scale-110 animate-pulse"
               >
                 <Image
                   width={20}
@@ -110,13 +106,13 @@ export default function MyCardSection() {
         <div className="flex justify-center gap-4 mt-6">
           <button
             onClick={() => scroll("left")}
-            className="p-1 text-black hover:scale-110 transition"
+            className="p-1 text-black hover:scale-110 transition animate-pulse"
           >
             <ArrowLeftCircle size={32} />
           </button>
           <button
             onClick={() => scroll("right")}
-            className="p-1 text-black hover:scale-110 transition"
+            className="p-1 text-black hover:scale-110 transition animate-pulse"
           >
             <ArrowRightCircle size={32} />
           </button>

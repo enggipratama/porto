@@ -1,9 +1,10 @@
+"use client";
 import Image from "next/image";
 
 export default function About() {
   return (
     <section
-      className="flex flex-col items-center justify-center text-black mb-50"
+      className="flex flex-col items-center justify-center text-black"
       id="about"
     >
       {/* GIF Icon */}
@@ -12,13 +13,72 @@ export default function About() {
         height={30}
         src="/content/shooting-star.gif?v=2"
         alt="About Icon"
-        className="w-24 h-24 mx-auto"
+        className="w-32 h-32 mx-auto mt-0 sm:mt-0"
       />
 
       {/* Text content */}
-      <a className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+      <a className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         About Me_
       </a>
+
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 sm:gap-20 p-5 sm:p-20">
+        {/* Teks About */}
+        <div className="text-center md:text-left max-w-xl">
+          <a className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+            So Who am I ? _
+          </a>
+          <p className="text-black font-semibold text-sm leading-relaxed mt-3 sm:text-l text-justify">
+            Hi! I’m{" "}
+            <span className="text-sm mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+              Muhammad Einggi Gusti P
+            </span>
+            , a Computer Science graduate from Universitas Muhammadiyah Malang,
+            class of 2024, with a strong passion for technology and its
+            continuous development. Throughout my academic journey, I actively
+            participated in various trainings and seminars to broaden my
+            knowledge and enhance my technical skills.
+            <br /><br />I believe that technology
+            is constantly evolving, and continuous learning is essential. With a
+            collaborative spirit and a strong commitment to delivering the best
+            results, I’m always ready to take on new challenges in dynamic and
+            professional environments.
+          </p>
+        </div>
+
+        {/* Foto Profil */}
+        <div className="flex-shrink-0">
+          <Image
+            width={300}
+            height={300}
+            src="/content/profile.jpg"
+            alt="Profile Picture"
+            className="w-50 h-60 md:max-w-96 md:max-h-96 object-cover rounded-xl shadow-xl border-1 border-white dark:border-gray-800"
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center mt-10 gap-5">
+        {/* Kolom Kiri */}
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-blue-900 mb-1 animate-bounce" />
+          <div className="w-1 h-10 bg-gradient-to-b from-blue-900 via-purple-700 to-pink-800 animate-pulse" />
+          <div className="w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-pink-800 mt-1 animate-bounce" />
+        </div>
+
+        {/* Kolom Tengah */}
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-0 h-0 border-l-5 border-r-5 border-b-8 border-transparent border-b-blue-900 mb-2 animate-bounce" />
+          <div className="w-1 h-23 bg-gradient-to-b from-blue-900 via-purple-700 to-pink-800 animate-pulse" />
+          <div className="w-0 h-0 border-l-5 border-r-5 border-t-8 border-transparent border-t-pink-800 mt-2 animate-bounce" />
+        </div>
+
+        {/* Kolom Kanan */}
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-blue-900 mb-1 animate-bounce" />
+          <div className="w-1 h-10 bg-gradient-to-b from-blue-900 via-purple-700 to-pink-800 animate-pulse" />
+          <div className="w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-pink-800 mt-1 animate-bounce" />
+        </div>
+      </div>
     </section>
   );
 }
