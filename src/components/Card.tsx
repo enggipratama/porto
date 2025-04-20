@@ -14,30 +14,30 @@ export default function MyCardSection() {
       footer: "https://github.com/enggipratama/DAVIBARTEST",
       image: "/content/davibar.png",
     },
-    {
-      title: "Davibar",
-      content: "Warehouse Website",
-      footer: "https://github.com/davibar",
-      image: "/content/davibar.png",
-    },
-    {
-      title: "Davibar",
-      content: "Warehouse Website",
-      footer: "https://github.com/davibar",
-      image: "/content/davibar.png",
-    },
-    {
-      title: "Davibar",
-      content: "Warehouse Website",
-      footer: "https://github.com/davibar",
-      image: "/content/davibar.png",
-    },
-    {
-      title: "Davibar",
-      content: "Warehouse Website",
-      footer: "https://github.com/davibar",
-      image: "/content/davibar.png",
-    },
+    // {
+    //   title: "Davibar",
+    //   content: "Warehouse Website",
+    //   footer: "https://github.com/davibar",
+    //   image: "/content/davibar.png",
+    // },
+    // {
+    //   title: "Davibar",
+    //   content: "Warehouse Website",
+    //   footer: "https://github.com/davibar",
+    //   image: "/content/davibar.png",
+    // },
+    // {
+    //   title: "Davibar",
+    //   content: "Warehouse Website",
+    //   footer: "https://github.com/davibar",
+    //   image: "/content/davibar.png",
+    // },
+    // {
+    //   title: "Davibar",
+    //   content: "Warehouse Website",
+    //   footer: "https://github.com/davibar",
+    //   image: "/content/davibar.png",
+    // },
   ];
 
   const scroll = (direction: "left" | "right") => {

@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="z-50 w-full  shadow">
-      <div className="flex space-x-2 mx-4 mt-2 mb-2">
+    <nav className="z-50 w-full shadow">
+      <div className="flex space-x-2 mx-4 mt-2 mb-2 items-center justify-center">
         <a
           href="https://instagram.com/enggiipratama"
           target="_blank"

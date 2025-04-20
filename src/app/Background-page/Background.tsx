@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function Background() {
   return (
     <div className="fixed inset-0 bg-cover bg-fixed overflow-hidden">
-      {/* Background GIF */}
       <Image
         width={1920}
         height={0}

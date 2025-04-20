@@ -58,7 +58,7 @@ export default function Skill() {
   }, []);
 
   return (
-    <section className="py-10 px-10 sm:px-30">
+    <section className="py-10 px-5 sm:px-20">
       <h2 className="text-center text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         My Skills
       </h2>

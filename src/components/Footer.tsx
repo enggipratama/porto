@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="text-black py-10 rounded">
+    <footer className="text-black rounded mb-10">
       <div className="max-w-screen-lg mx-auto px-4 text-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
         <div className="flex flex-col items-center justify-center">
@@ -86,8 +86,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-center p-10">
-          <h3 className="text-xl mb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+        <div className="text-center">
+          <h3 className="text-xl mb-2 mt-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
             About Me
           </h3>
           <p className="text-sm font-bold text-gray-800">
@@ -101,7 +101,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="text-center text-lg text-gray-900 mt-6">
+        <div className="text-center text-lg text-gray-900 p-5 mt-10">
           &copy; {new Date().getFullYear()} Enggipratama. All rights reserved.
         </div>
       </div>
