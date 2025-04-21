@@ -7,37 +7,96 @@ import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 
 export default function MyCardSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [deviceType, setDeviceType] = useState<"desktop" | "tablet" | "mobile">(
+    "desktop"
+  );
   const [visibleOverlay, setVisibleOverlay] = useState<number | null>(null);
-  const overlayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleTouchStart = () => setIsTouchDevice(true);
-    const handleMouseMove = () => setIsTouchDevice(false);
-
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("mousemove", handleMouseMove);
-
-    // Close overlay when clicking outside of it
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        overlayRef.current &&
-        !overlayRef.current.contains(e.target as Node)
-      ) {
-        setVisibleOverlay(null); // Close overlay if clicking outside
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setDeviceType("mobile"); // Perangkat mobile
+      } else if (width >= 768 && width <= 1280) {
+        setDeviceType("tablet"); // Perangkat tablet
+      } else {
+        setDeviceType("desktop"); // Perangkat desktop sebenarnya
       }
     };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("click", handleClickOutside);
-    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const cards = [
+    {
+      title: "Davibar House",
+      content: "Warehouse Inventory Website",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/DAVIBARTEST",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://davibar-house.vercel.app",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar House",
+      content: "Warehouse Inventory Website",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/DAVIBARTEST",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://davibar-house.vercel.app",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar House",
+      content: "Warehouse Inventory Website",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/DAVIBARTEST",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://davibar-house.vercel.app",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
+      image: "/content/davibar.png",
+    },
+    {
+      title: "Davibar House",
+      content: "Warehouse Inventory Website",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/DAVIBARTEST",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://davibar-house.vercel.app",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
+      image: "/content/davibar.png",
+    },
     {
       title: "Davibar House",
       content: "Warehouse Inventory Website",
@@ -70,8 +129,22 @@ export default function MyCardSection() {
     }
   };
 
-  const toggleOverlay = (index: number) => {
-    setVisibleOverlay((prev) => (prev === index ? null : index));
+  const handleTouch = (index: number) => {
+    if (deviceType !== "desktop") {
+      setVisibleOverlay((prev) => (prev === index ? null : index));
+    }
+  };
+
+  const handleMouseEnter = (index: number) => {
+    if (deviceType === "desktop") {
+      setVisibleOverlay(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (deviceType === "desktop") {
+      setVisibleOverlay(null);
+    }
   };
 
   return (
@@ -86,20 +159,16 @@ export default function MyCardSection() {
           <div
             key={index}
             className="snap-center shrink-0 w-full sm:w-auto flex justify-center px-3 mt-3"
-            onPointerDown={() => {
-              if (isTouchDevice) {
-                toggleOverlay(index);
-              }
-            }}
-            onMouseEnter={() => !isTouchDevice && setVisibleOverlay(index)}
-            onMouseLeave={() => !isTouchDevice && setVisibleOverlay(null)}
+            onClick={() => handleTouch(index)}
+            onPointerDown={() => deviceType === "desktop" && handleTouch(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
           >
             <div
-              className={`relative w-[200px] sm:w-[200px] lg:w-[200px] bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 overflow-hidden group transition-transform duration-300 ${
-                !isTouchDevice ? "hover:scale-105" : ""
+              className={`relative w-[180px] sm:w-[180px] lg:w-[200px] bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 overflow-hidden group transition-transform duration-300 ${
+                deviceType !== "desktop" ? "cursor-pointer" : ""
               }`}
             >
-              {/* Image */}
               <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-md">
                 <Image
                   src={card.image}
@@ -109,7 +178,6 @@ export default function MyCardSection() {
                 />
               </div>
 
-              {/* Title & Description */}
               <h1 className="text-xl font-bold text-center text-white mt-2 line-clamp-2">
                 {card.title}
               </h1>
@@ -117,9 +185,7 @@ export default function MyCardSection() {
                 {card.content}
               </p>
 
-              {/* Overlay */}
               <div
-                ref={overlayRef}
                 className={`
                   absolute inset-0 flex items-center justify-center rounded-xl
                   bg-blue-900/40 backdrop-blur-sm
