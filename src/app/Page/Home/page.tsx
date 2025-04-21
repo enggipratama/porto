@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import TypingText from "@/components/TypingText";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -16,9 +17,9 @@ export default function Page() {
         className="w-32 h-32 mx-auto mt-0 sm:mt-5"
       />
 
-      <a className="text-lg sm:text-1xl font-bold text-center">
+      <h1 className="text-lg sm:text-1xl font-bold text-center">
         Hi, My Name is
-      </a>
+      </h1>
       <h1 className="text-4xl sm:text-5xl md:text-6xl p-8 md:p-10 min-h-40 md:min-h-full sm:px-20 px-10 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         <TypingText text="Muhammad Einggi Gusti P" />
       </h1>
@@ -28,7 +29,7 @@ export default function Page() {
       <p className="text-xs sm:text-sm text-center font-bold mx-4 mb-2 sm:px-20 px-5">
         Feel free to explore and learn more about me.
       </p>
-      <a
+      <Link
         href="/content/cv-einggi.pdf"
         download
         className="inline-flex mt-2 mb-10 items-center px-6 py-3 bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
@@ -48,7 +49,7 @@ export default function Page() {
           />
         </svg>
         Download CV
-      </a>
+      </Link>
       <div className="flex items-center justify-center mt-10 gap-5">
         <div className="flex flex-col items-center justify-center">
           <div className="w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-blue-900 mb-1 animate-bounce" />

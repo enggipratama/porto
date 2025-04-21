@@ -59,9 +59,9 @@ export default function Skill() {
 
   return (
     <section className="py-10 px-5 sm:px-20">
-      <h2 className="text-center text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+      <h1 className="text-center text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         My Skills
-      </h2>
+      </h1>
 
       <div
         ref={containerRef}
@@ -79,9 +79,9 @@ export default function Skill() {
               height={40}
               className="object-contain mb-2 drop-shadow-lg"
             />
-            <a className="text-sm font-bold text-center text-black">
+            <h1 className="text-sm font-bold text-center text-black">
               {skill.title}
-            </a>
+            </h1>
           </div>
         ))}
       </div>

@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const FloatingLogoWithMenu: React.FC = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -89,7 +90,7 @@ const FloatingLogoWithMenu: React.FC = () => {
           >
             <ul>
               <li>
-                <a
+                <Link
                   href="#home"
                   onClick={(e) => {
                     e.preventDefault();
@@ -99,10 +100,10 @@ const FloatingLogoWithMenu: React.FC = () => {
                   className="block py-2 text-white text-sm transition-transform duration-200 transform hover:scale-120"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#about"
                   onClick={(e) => {
                     e.preventDefault();
@@ -112,10 +113,10 @@ const FloatingLogoWithMenu: React.FC = () => {
                   className="block py-2 text-white text-sm transition-transform duration-200 transform hover:scale-120"
                 >
                   About Me
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#portofolio"
                   onClick={(e) => {
                     e.preventDefault();
@@ -125,10 +126,10 @@ const FloatingLogoWithMenu: React.FC = () => {
                   className="block py-2 text-white text-sm transition-transform duration-200 transform hover:scale-120"
                 >
                   Portofolio
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
@@ -138,7 +139,7 @@ const FloatingLogoWithMenu: React.FC = () => {
                   className="block py-2 text-white text-sm transition-transform duration-200 transform hover:scale-120"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>

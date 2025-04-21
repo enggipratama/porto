@@ -15,15 +15,15 @@ export default function About() {
         className="w-32 h-32 mx-auto mt-0 sm:mt-5"
       />
 
-      <a className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+      <h1 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         About Me_
-      </a>
+      </h1>
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 sm:gap-20 p-5 sm:p-10 sm:px-20 px-5">
         <div className="text-center md:text-left max-w-xl">
-          <a className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+          <h1 className="text-3xl mb-2 font-bold text-center sm:text-left text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
             So Who am I ? _
-          </a>
+          </h1>
           <p className="text-black font-semibold text-sm leading-relaxed mt-3 sm:text-l text-justify">
             Hi! I’m{" "}
             <span className="text-sm mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">

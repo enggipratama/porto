@@ -1,43 +1,40 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 
 export default function MyCardSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [visibleOverlay, setVisibleOverlay] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const cards = [
     {
       title: "Davibar House",
       content: "Warehouse Inventory Website",
-      footer: "https://github.com/enggipratama/DAVIBARTEST",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/DAVIBARTEST",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://davibar-house.vercel.app",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
       image: "/content/davibar.png",
     },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
-    // {
-    //   title: "Davibar",
-    //   content: "Warehouse Website",
-    //   footer: "https://github.com/davibar",
-    //   image: "/content/davibar.png",
-    // },
   ];
 
   const scroll = (direction: "left" | "right") => {
@@ -53,21 +50,28 @@ export default function MyCardSection() {
     }
   };
 
+  const toggleOverlay = (index: number) => {
+    if (!isMobile) return;
+    setVisibleOverlay((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div className="relative w-full max-w-[70vw] mx-auto">
       <div
         ref={scrollRef}
-        className={`flex gap-0 snap-x snap-mandatory ${
+        className={`flex gap-4 snap-x snap-mandatory ${
           cards.length > 1 ? "overflow-x-auto" : ""
         } pb-4 mt-4 no-scrollbar scroll-smooth`}
       >
         {cards.map((card, index) => (
           <div
             key={index}
-            className="snap-center shrink-0 min-w-[100%] sm:min-w-[50%] lg:min-w-[25%] flex flex-col items-center justify-center px-4 mt-3"
+            className="snap-center shrink-0 w-full sm:w-auto flex justify-center px-3 mt-3"
+            onClick={() => toggleOverlay(index)}
           >
-            <div className="bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 relative overflow-hidden group transition transform hover:scale-105">
-              <div className="w-16 h-16 mx-auto relative overflow-hidden rounded-md">
+            <div className="relative w-[200px] sm:w-[200px] lg:w-[200px] bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 overflow-hidden group transition-transform duration-300 hover:scale-105">
+              {/* Image */}
+              <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-md">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -76,31 +80,55 @@ export default function MyCardSection() {
                 />
               </div>
 
-              <a className="text-xl font-bold text-center text-white mt-2 line-clamp-2 w-32">
+              {/* Title & Description */}
+              <h1 className="text-xl font-bold text-center text-white mt-2 line-clamp-2">
                 {card.title}
-              </a>
-              <p className="text-white text-xs text-center line-clamp-2 w-32 h-8 mt-3">
+              </h1>
+              <p className="text-white text-xs text-center line-clamp-2 mt-3 min-h-[2rem]">
                 {card.content}
               </p>
 
-              <a
-                href={card.footer}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center mt-4 transition-transform duration-200 hover:scale-110 animate-pulse"
+              {/* Overlay */}
+              <div
+                className={`
+                  absolute inset-0 flex items-center justify-center rounded-xl
+                  bg-blue-900/40 backdrop-blur-sm
+                  transition-all duration-300
+                  ${
+                    isMobile
+                      ? visibleOverlay === index
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-full pointer-events-none"
+                      : "opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0"
+                  }
+                `}
               >
-                <Image
-                  width={20}
-                  height={20}
-                  src="/content/white-github.png"
-                  alt="GitHub Logo"
-                />
-              </a>
+                <div className="flex items-center justify-center gap-4">
+                  {card.footer.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Image
+                        width={30}
+                        height={30}
+                        src={link.icon}
+                        alt={link.alt}
+                        className="hover:scale-110 transition"
+                      />
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Scroll Buttons */}
       {cards.length > 1 && (
         <div className="flex justify-center gap-4 mt-6">
           <button

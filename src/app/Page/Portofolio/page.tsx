@@ -17,9 +17,9 @@ export default function Portofolio() {
         className="w-32 h-32 mx-auto"
       />
 
-      <a className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+      <h1 className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         My Portofolio_
-      </a>
+      </h1>
       <div className="items-center">
         <CardSection />
       </div>

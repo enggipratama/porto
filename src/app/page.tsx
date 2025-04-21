@@ -1,11 +1,11 @@
-import Background from "./Background-page/Background";
+import Background from "./Background-page/page";
 import Navbar from "@/components/Navbar";
-import Page from "./Page/Home/Home";
-import Portofolio from "./Page/Portofolio/Portofolio";
-import About from "./Page/About/About";
-import Contact from "./Page/Contact/Contact";
+import Page from "./Page/Home/page";
+import Portofolio from "./Page/Portofolio/page";
+import About from "./Page/About/page";
+import Contact from "./Page/Contact/page";
 import Footer from "@/components/Footer";
-import FloatingLogoWithMenu from "@/components/logonavbar";
+import FloatingLogoWithMenu from "@/components/Logonavbar";
 import React from "react";
 
 export default function Home() {
@@ -17,8 +17,8 @@ export default function Home() {
         <div
           className="w-full h-full rounded-xl shadow-lg border border-gray-300"
           style={{
-            backgroundColor: "#fae7e72b", // warna kertas kuning kusam
-            backgroundImage: `url("/content/kertas.jpg")`, // tambahkan gambar tekstur
+            backgroundColor: "#fae7e72b",
+            backgroundImage: `url("/content/kertas.jpg")`,
             backgroundSize: "cover",
             backgroundBlendMode: "multiply",
           }}

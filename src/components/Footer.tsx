@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           </h3>
           <ul className="flex justify-center gap-4">
             <li>
-              <a
+              <Link
                 href="https://github.com/enggipratama"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -24,10 +25,10 @@ const Footer = () => {
                   alt="Github"
                   className="transition-transform duration-200 hover:scale-110"
                 />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://instagram.com/enggiipratama"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -39,10 +40,10 @@ const Footer = () => {
                   alt="Instagram"
                   className="transition-transform duration-200 hover:scale-110"
                 />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://discord.com/users/903595911840677889"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,7 +55,7 @@ const Footer = () => {
                   alt="Discord"
                   className="transition-transform duration-200 hover:scale-110"
                 />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -65,22 +66,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="mailto:enggipratama82@gmail.com?subject=Hello&body=Hello! I saw your portfolio and wanted to reach out. Do you have suggestions or would you like to collaborate?"
                   className="text-lg text-gray-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-900 hover:via-purple-700 hover:to-pink-800"
                 >
                   Email: enggipratama82@gmail.com
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.linkedin.com/in/enggipratama/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-lg text-gray-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-900 hover:via-purple-700 hover:to-pink-800"
                 >
                   LinkedIn: @enggipratama
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
