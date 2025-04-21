@@ -7,14 +7,34 @@ import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 
 export default function MyCardSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [visibleOverlay, setVisibleOverlay] = useState<number | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const handleTouchStart = () => setIsTouchDevice(true);
+    const handleMouseMove = () => setIsTouchDevice(false);
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Close overlay when clicking outside of it
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        overlayRef.current &&
+        !overlayRef.current.contains(e.target as Node)
+      ) {
+        setVisibleOverlay(null); // Close overlay if clicking outside
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   const cards = [
@@ -51,7 +71,6 @@ export default function MyCardSection() {
   };
 
   const toggleOverlay = (index: number) => {
-    if (!isMobile) return;
     setVisibleOverlay((prev) => (prev === index ? null : index));
   };
 
@@ -67,9 +86,19 @@ export default function MyCardSection() {
           <div
             key={index}
             className="snap-center shrink-0 w-full sm:w-auto flex justify-center px-3 mt-3"
-            onClick={() => toggleOverlay(index)}
+            onPointerDown={() => {
+              if (isTouchDevice) {
+                toggleOverlay(index);
+              }
+            }}
+            onMouseEnter={() => !isTouchDevice && setVisibleOverlay(index)}
+            onMouseLeave={() => !isTouchDevice && setVisibleOverlay(null)}
           >
-            <div className="relative w-[200px] sm:w-[200px] lg:w-[200px] bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 overflow-hidden group transition-transform duration-300 hover:scale-105">
+            <div
+              className={`relative w-[200px] sm:w-[200px] lg:w-[200px] bg-gradient-to-r from-purple-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-6 overflow-hidden group transition-transform duration-300 ${
+                !isTouchDevice ? "hover:scale-105" : ""
+              }`}
+            >
               {/* Image */}
               <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-md">
                 <Image
@@ -90,16 +119,15 @@ export default function MyCardSection() {
 
               {/* Overlay */}
               <div
+                ref={overlayRef}
                 className={`
                   absolute inset-0 flex items-center justify-center rounded-xl
                   bg-blue-900/40 backdrop-blur-sm
                   transition-all duration-300
                   ${
-                    isMobile
-                      ? visibleOverlay === index
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-full pointer-events-none"
-                      : "opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0"
+                    visibleOverlay === index
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-full pointer-events-none"
                   }
                 `}
               >
