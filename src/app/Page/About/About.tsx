@@ -34,22 +34,28 @@ export default function About() {
             continuous development. Throughout my academic journey, I actively
             participated in various trainings and seminars to broaden my
             knowledge and enhance my technical skills.
-            <br />I believe that technology
-            is constantly evolving, and continuous learning is essential. With a
-            collaborative spirit and a strong commitment to delivering the best
-            results, I’m always ready to take on new challenges in dynamic and
-            professional environments.
+            <br />I believe that technology is constantly evolving, and
+            continuous learning is essential. With a collaborative spirit and a
+            strong commitment to delivering the best results, I’m always ready
+            to take on new challenges in dynamic and professional environments.
           </p>
         </div>
+        <div className="relative bg-gray-200 rounded-xl p-2 shadow-xl hover:scale-105 transition-transform duration-300">
 
-        <div className="flex-shrink-0">
+          {/* Gambar utama */}
           <Image
             width={300}
             height={300}
-            src="/content/profile.jpg"
+            src="/content/profile2.jpg"
             alt="Profile Picture"
-            className="w-50 h-60 md:max-w-96 md:max-h-96 object-cover rounded-xl shadow-xl border-1 border-white dark:border-gray-800"
+            className="w-50 h-60 md:max-w-96 md:max-h-96 object-cover rounded-xl"
           />
+
+          {/* Teks */}
+          <div className="text-center mt-2">
+            <h2 className="text-xl font-bold text-gray-800">Enggi Pratama</h2>
+            <p className="text-sm text-gray-600">Frontend Developer</p>
+          </div>
         </div>
       </div>
 
