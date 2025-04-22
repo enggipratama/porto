@@ -7,7 +7,7 @@ import Contact from "./Page/Contact/page";
 import Footer from "@/components/Footer";
 import FloatingLogoWithMenu from "@/components/Logonavbar";
 import React from "react";
-import JokeCard from "./Jokes/page";
+import JokeCard from "./Page/Jokes/page";
 
 export default function Home() {
   return (

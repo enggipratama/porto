@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import Dates from "@/app/Time/page";
+import Dates from "./Time";
 
 export default function Navbar() {
   return (
-    <nav className="z-50 w-full shadow p-2 item">
+    <nav className="z-50 w-full shadow p-2">
       <div className="flex items-center justify-between flex-col sm:flex-row sm:items-center gap-2 mx-8">
         {/* Tanggal dan Jam */}
         <div className="flex items-center sm:items-start sm:flex-row sm:gap-2 gap-1 text-sm text-gray-800 dark:text-gray-200 font-semibold">
