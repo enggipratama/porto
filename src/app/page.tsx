@@ -7,6 +7,7 @@ import Contact from "./Page/Contact/page";
 import Footer from "@/components/Footer";
 import FloatingLogoWithMenu from "@/components/Logonavbar";
 import React from "react";
+import JokeCard from "./Jokes/page";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
               <Page />
               <About />
               <Portofolio />
+              <JokeCard />
               <Contact />
               <Footer />
             </div>

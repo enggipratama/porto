@@ -80,7 +80,7 @@ const FloatingLogoWithMenu: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.3, y: -20 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="fixed text-center z-40 bg-blue-900 rounded-lg shadow-lg px-4 py-3 max-w-[90vw]"
+            className="fixed text-center z-40 bg-gradient-to-r from-purple-900 to-indigo-900 rounded-lg shadow-lg px-4 py-3 max-w-[90vw]"
             style={{
               top: logoPosition.y + menuOffset + 10,
               left: logoPosition.x - menuOffset + 30,

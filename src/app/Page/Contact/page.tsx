@@ -1,11 +1,11 @@
 "use client";
-
 export default function About() {
   return (
     <section
       className="flex flex-col items-center justify-center text-black mb-5 sm:px-10 px-5"
       id="contact"
     >
+      
       <h1 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         Get in Touch_
       </h1>
