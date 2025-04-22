@@ -10,11 +10,11 @@ export default function Page() {
       id="home"
     >
       <Image
-        width={30}
-        height={30}
+        width={90}
+        height={90}
         src="/content/ship.gif?v=2"
         alt="Home Icon"
-        className="w-32 h-32 mx-auto mt-0 sm:mt-5"
+        className=" sm:w-32 sm:h-32 mx-auto mt-0 sm:mt-5"
       />
 
       <h1 className="text-lg sm:text-1xl font-bold text-center">

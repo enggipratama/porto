@@ -10,11 +10,11 @@ export default function Portofolio() {
       id="portofolio"
     >
       <Image
-        width={30}
-        height={30}
+        width={90}
+        height={90}
         src="/content/moon.gif?v=2"
         alt="Porto Icon"
-        className="w-32 h-32 mx-auto"
+        className="sm:w-32 sm:h-32 mx-auto"
       />
 
       <h1 className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">

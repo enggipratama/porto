@@ -1,63 +1,59 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import Dates from "@/app/Time/page";
 
 export default function Navbar() {
   return (
-    <nav className="z-50 w-full shadow">
-      <div className="flex space-x-2 mx-4 mt-2 mb-2 items-center justify-center">
-        <Link
-          href="https://instagram.com/enggiipratama"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            width={25}
-            height={25}
-            src="/content/instagram.svg"
-            alt="Instagram"
-            className="transition-transform duration-200 hover:scale-110"
-          />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/enggipratama/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            width={25}
-            height={25}
-            src="/content/linkedin.svg"
-            alt="Linkedin"
-            className="transition-transform duration-200 hover:scale-110"
-          />
-        </Link>
-        <Link
-          href="https://github.com/enggipratama"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            width={25}
-            height={25}
-            src="/content/github.svg"
-            alt="Github"
-            className="transition-transform duration-200 hover:scale-110"
-          />
-        </Link>
-        <Link
-          href="https://discord.com/users/903595911840677889"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            width={25}
-            height={25}
-            src="/content/discord.png"
-            alt="Discord"
-            className="transition-transform duration-200 hover:scale-110"
-          />
-        </Link>
+    <nav className="z-50 w-full shadow p-2 item">
+      <div className="flex items-center justify-between flex-col sm:flex-row sm:items-center gap-2 mx-8">
+        {/* Tanggal dan Jam */}
+        <div className="flex items-center sm:items-start sm:flex-row sm:gap-2 gap-1 text-sm text-gray-800 dark:text-gray-200 font-semibold">
+          <Dates showDate />
+          <span className="text-gray-900">-</span>
+          <Dates showTime />
+        </div>
+
+        {/* Ikon Sosial Media */}
+        <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-3 mt-2 sm:mt-0">
+          {[
+            {
+              href: "https://instagram.com/enggiipratama",
+              src: "/content/instagram.svg",
+              alt: "Instagram",
+            },
+            {
+              href: "https://www.linkedin.com/in/enggipratama/",
+              src: "/content/linkedin.svg",
+              alt: "Linkedin",
+            },
+            {
+              href: "https://github.com/enggipratama",
+              src: "/content/github.svg",
+              alt: "Github",
+            },
+            {
+              href: "https://discord.com/users/903595911840677889",
+              src: "/content/discord.png",
+              alt: "Discord",
+            },
+          ].map(({ href, src, alt }) => (
+            <Link
+              key={alt}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                width={25}
+                height={25}
+                src={src}
+                alt={alt}
+                className="transition-transform duration-200 hover:scale-110"
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   );

@@ -8,11 +8,11 @@ export default function About() {
       id="about"
     >
       <Image
-        width={30}
-        height={30}
+        width={90}
+        height={90}
         src="/content/shooting-star.gif?v=2"
         alt="About Icon"
-        className="w-32 h-32 mx-auto mt-0 sm:mt-5"
+        className="sm:w-32 sm:h-32 mx-auto mt-0 sm:mt-5"
       />
 
       <h1 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
