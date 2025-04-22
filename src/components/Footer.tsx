@@ -98,7 +98,7 @@ const Footer = () => {
               {" "}
               next project
             </span>
-            _!
+            !
           </p>
         </div>
 

@@ -22,7 +22,7 @@ export default function About() {
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 sm:gap-20 p-5 sm:p-10 sm:px-20 px-5">
         <div className="text-center md:text-left max-w-xl">
           <h1 className="text-3xl mb-2 font-bold text-center sm:text-left text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
-            So Who am I ? _
+          So, Who Am I?
           </h1>
           <p className="text-black font-semibold text-sm leading-relaxed mt-3 sm:text-l text-justify">
             Hi! I’m{" "}
@@ -54,7 +54,7 @@ export default function About() {
           {/* Teks */}
           <div className="text-center mt-2">
             <h2 className="text-xl font-bold text-gray-800">Enggi Pratama</h2>
-            <p className="text-sm text-gray-600">Frontend Developer</p>
+            <p className="text-sm text-gray-600">Front-end Developer</p>
           </div>
         </div>
       </div>

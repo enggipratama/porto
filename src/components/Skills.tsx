@@ -59,10 +59,12 @@ export default function Skill() {
 
   return (
     <section className="py-10 px-5 sm:px-20">
-      <h1 className="text-center text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
+      <h1 className="text-center text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
         My Skills
       </h1>
-
+      <p className="text-center text-sm font-bold mb-6 text-black">
+        Here are some tools and technologies I work with:
+      </p>
       <div
         ref={containerRef}
         className="overflow-x-auto whitespace-nowrap flex gap-1 px-4 no-scrollbar"
