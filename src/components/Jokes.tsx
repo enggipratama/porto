@@ -24,13 +24,13 @@ const JokeCard: React.FC<JokeCardProps> = ({ joke, loading, error }) => {
   "
     >
       {loading ? (
-        <p className="text-gray-700 dark:text-gray-300 text-center break-words">
+        <p className="text-gray-200 text-center break-words">
           Loading...
         </p>
       ) : error ? (
         <p className="text-red-500 text-center break-words">{error}</p>
       ) : (
-        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg text-center break-words overflow-hidden whitespace-normal">
+        <p className="text-gray-200 text-base sm:text-lg text-center break-words overflow-hidden whitespace-normal">
           {joke}
         </p>
       )}
