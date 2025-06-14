@@ -39,12 +39,29 @@ export default function MyCardSection() {
           alt: "GitHub Logo",
         },
         {
-          url: "https://davibar-house.vercel.app",
+          url: "https://davibar.enggipratama.my.id",
           icon: "/content/link.png",
           alt: "Live Demo",
         },
       ],
       image: "/content/davibar.png",
+    },
+    {
+      title: "Portfolio 2.0",
+      content: "Personal Portfolio Website (on Progress)",
+      footer: [
+        {
+          url: "https://github.com/enggipratama/megp-web",
+          icon: "/content/white-github.png",
+          alt: "GitHub Logo",
+        },
+        {
+          url: "https://megp.enggipratama.my.id",
+          icon: "/content/link.png",
+          alt: "Live Demo",
+        },
+      ],
+      image: "/content/porto.png",
     },
   ];
 

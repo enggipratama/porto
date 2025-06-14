@@ -14,6 +14,7 @@ export default function Page() {
         height={90}
         src="/content/ship.gif?v=2"
         alt="Home Icon"
+        unoptimized
         className=" sm:w-32 sm:h-32 mx-auto mt-0 sm:mt-5"
       />
 

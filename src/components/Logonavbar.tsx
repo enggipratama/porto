@@ -62,6 +62,7 @@ const FloatingLogoWithMenu: React.FC = () => {
             height={100}
             src="/content/moonnav.gif"
             alt="Moon Logo"
+            unoptimized
             className="w-[clamp(3rem,3vw,3rem)] h-auto transition-transform duration-200 hover:scale-110"
           />
           <h1

@@ -14,11 +14,12 @@ export default function Portofolio() {
         height={90}
         src="/content/moon.gif?v=2"
         alt="Porto Icon"
+        unoptimized
         className="sm:w-32 sm:h-32 mx-auto"
       />
 
       <h1 className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-700 to-pink-800">
-      My Portfolio_
+        My Portfolio_
       </h1>
       <div className="items-center">
         <CardSection />

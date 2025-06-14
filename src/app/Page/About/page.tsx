@@ -12,6 +12,7 @@ export default function About() {
         height={90}
         src="/content/shooting-star.gif?v=2"
         alt="About Icon"
+        unoptimized
         className="sm:w-32 sm:h-32 mx-auto mt-0 sm:mt-5"
       />
 
